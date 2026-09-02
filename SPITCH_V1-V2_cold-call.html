@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="green">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPITCH — Cold Call Script · Cleaning / Local Business · NO.SITE</title>
+<meta name="description" content="Cold call script for local service business owners. English base + RU translation under every block. V1 customer-approach · V2 owner tree.">
+<script>try{var t=localStorage.getItem('spitch-theme');if(t==='red'||t==='white')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23000%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-family=%27monospace%27 font-size=%2719%27 font-weight=%27bold%27 fill=%27%23c8ff00%27 text-anchor=%27middle%27%3EN%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Share+Tech+Mono&family=Special+Elite&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000; --dark:#080808; --card:#0d0d0d; --card2:#111;
+  --grid-line:rgba(255,255,255,0.025);
+  --nav-bg:rgba(0,0,0,0.86); --menu-bg:rgba(6,6,6,0.97);
+  --menu-shadow:0 18px 40px rgba(0,0,0,0.65); --sw-ring:rgba(255,255,255,0.22);
+  --white:#f0f0f0; --grey:#555; --lgrey:#8a8a8a;
+  --border:rgba(255,255,255,0.07); --border2:rgba(255,255,255,0.13);
+  --accent:#c8ff00; --accent-rgb:200,255,0; --on-accent:#000;
+  --accent2:rgba(var(--accent-rgb),0.15); --accent3:rgba(var(--accent-rgb),0.06);
+  --glow:0 0 24px rgba(var(--accent-rgb),0.32), 0 0 60px rgba(var(--accent-rgb),0.1);
+  --neon-text:0 0 7px rgba(var(--accent-rgb),0.56), 0 0 20px rgba(var(--accent-rgb),0.28), 0 0 40px rgba(var(--accent-rgb),0.14);
+  /* semantic roles — independent of accent so meaning never shifts */
+  --c-me:#3ddc84;   --c-me-rgb:61,220,132;
+  --c-cl:#ffc043;   --c-cl-rgb:255,192,67;
+  --c-obj:#ff5252;  --c-obj-rgb:255,82,82;
+  --c-goal:#6c9bff; --c-goal-rgb:108,155,255;
+  --c-win:#c8ff00;  --c-win-rgb:200,255,0;
+}
+html[data-theme="red"]{
+  --accent:#ff2e2e; --accent-rgb:255,46,46; --on-accent:#fff;
+  --c-obj:#ff8f5c; --c-obj-rgb:255,143,92;
+  --c-win:#ff2e2e; --c-win-rgb:255,46,46;
+}
+html[data-theme="white"]{
+  --black:#ffffff; --dark:#f2f1ec; --card:#f7f6f2; --card2:#efeee9;
+  --white:#111110; --grey:#8a8983; --lgrey:#56564f;
+  --border:rgba(0,0,0,0.11); --border2:rgba(0,0,0,0.18);
+  --accent:#000000; --accent-rgb:0,0,0; --on-accent:#ffffff;
+  --grid-line:rgba(0,0,0,0.05);
+  --nav-bg:rgba(255,255,255,0.9); --menu-bg:rgba(255,255,255,0.98);
+  --menu-shadow:0 18px 40px rgba(0,0,0,0.14); --sw-ring:rgba(0,0,0,0.22);
+  --glow:0 6px 22px rgba(0,0,0,0.16); --neon-text:none;
+  --c-me:#12833f;   --c-me-rgb:18,131,63;
+  --c-cl:#9a6a00;   --c-cl-rgb:154,106,0;
+  --c-obj:#c62828;  --c-obj-rgb:198,40,40;
+  --c-goal:#2f4fd0; --c-goal-rgb:47,79,208;
+  --c-win:#111110;  --c-win-rgb:17,17,16;
+}
+html[data-theme="white"] .hero-title em,
+html[data-theme="white"] .sec-title em,
+html[data-theme="white"] .big-num{text-shadow:none;}
+html[data-theme="white"] .ts-dot,
+html[data-theme="white"] .scroll-line{box-shadow:none;}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip;scroll-padding-top:130px;}
+body{font-family:'Share Tech Mono',monospace;background:var(--black);color:var(--white);overflow-x:hidden;overflow-x:clip;-webkit-text-size-adjust:100%;}
+body::before{content:'';position:fixed;inset:0;z-index:0;
+  background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:69px 69px;pointer-events:none;}
+.scroll-line{position:fixed;top:0;left:0;height:2px;z-index:1000;background:var(--accent);box-shadow:var(--glow);width:0%;}
+
+/* ─────────── NAV ─────────── */
+nav{position:fixed;top:0;left:0;width:100%;z-index:500;height:62px;padding:0 26px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0;}
+.nav-logo-mark{width:34px;height:34px;border:1px solid var(--accent);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;color:var(--accent);
+  font-family:'Cinzel',serif;font-weight:700;font-size:14px;
+  box-shadow:0 0 16px rgba(var(--accent-rgb),0.25), inset 0 0 12px rgba(var(--accent-rgb),0.05);}
+.nav-logo-text{font-family:'Special Elite',cursive;font-size:13px;letter-spacing:0.1em;color:var(--white);}
+.nav-logo-text small{display:block;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--grey);letter-spacing:0.14em;}
+.nav-right{display:flex;align-items:center;gap:10px;}
+
+/* version switch */
+.vswitch{display:flex;gap:2px;padding:3px;background:var(--card2);border:1px solid var(--border2);border-radius:5px;}
+.vbtn{font-family:'Share Tech Mono',monospace;font-size:11.5px;letter-spacing:0.1em;color:var(--lgrey);
+  background:transparent;border:none;border-radius:3px;padding:6px 13px;cursor:pointer;transition:all .22s;white-space:nowrap;}
+.vbtn:hover{color:var(--white);}
+.vbtn.on{background:var(--accent);color:var(--on-accent);font-weight:700;box-shadow:0 0 18px rgba(var(--accent-rgb),0.3);}
+
+.icon-btn{display:flex;align-items:center;gap:7px;height:30px;padding:0 11px;background:var(--card2);
+  border:1px solid var(--border2);border-radius:4px;cursor:pointer;transition:border-color .25s,background .25s,color .2s;
+  font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:0.08em;color:var(--lgrey);white-space:nowrap;}
+.icon-btn:hover{border-color:var(--accent);color:var(--white);}
+.icon-btn.on{border-color:var(--accent);color:var(--accent);}
+
+/* theme dropdown */
+.theme-select{position:relative;flex-shrink:0;}
+.ts-btn{display:flex;align-items:center;gap:8px;height:30px;padding:0 9px;background:var(--card2);
+  border:1px solid var(--border2);border-radius:4px;cursor:pointer;transition:border-color .25s,background .25s;}
+.ts-btn:hover{border-color:var(--accent);}
+.ts-dot{width:11px;height:11px;border-radius:50%;background:var(--accent);flex-shrink:0;
+  box-shadow:0 0 10px rgba(var(--accent-rgb),0.75);transition:background .3s,box-shadow .3s;}
+.ts-caret{width:13px;height:13px;color:var(--lgrey);transition:transform .3s cubic-bezier(.2,.9,.3,1.2);}
+.theme-select.open .ts-caret{transform:rotate(180deg);color:var(--accent);}
+.ts-menu{position:absolute;top:calc(100% + 11px);right:0;min-width:158px;padding:6px;z-index:600;
+  background:var(--menu-bg);backdrop-filter:blur(22px);border:1px solid var(--border2);border-radius:6px;
+  box-shadow:var(--menu-shadow);opacity:0;visibility:hidden;transform:translateY(-10px) scale(.94);transform-origin:top right;
+  transition:opacity .2s ease,transform .3s cubic-bezier(.2,.9,.3,1.25),visibility 0s linear .3s;}
+.theme-select.open .ts-menu{opacity:1;visibility:visible;transform:none;transition-delay:0s;}
+.ts-opt{display:flex;align-items:center;gap:11px;width:100%;padding:9px 10px;background:transparent;border:none;
+  border-radius:4px;cursor:pointer;font-family:'Share Tech Mono',monospace;font-size:12px;letter-spacing:0.06em;
+  color:var(--lgrey);text-align:left;transition:background .18s,color .18s;}
+.ts-opt:hover{background:var(--card);color:var(--white);}
+.ts-opt[aria-selected="true"]{color:var(--white);}
+.ts-sw{width:13px;height:13px;border-radius:50%;flex-shrink:0;border:1px solid var(--sw-ring);}
+.sw-white{background:#fff;}.sw-green{background:#c8ff00;}.sw-red{background:#ff2e2e;}
+.ts-opt span:not(.ts-sw){flex:1;}
+.ts-check{width:14px;height:14px;color:var(--accent);opacity:0;transform:scale(.5);transition:opacity .22s,transform .3s cubic-bezier(.2,.9,.3,1.5);}
+.ts-opt[aria-selected="true"] .ts-check{opacity:1;transform:none;}
+
+/* ─────────── GOAL BAR ─────────── */
+.goalbar{position:fixed;top:62px;left:0;width:100%;z-index:480;background:var(--accent);color:var(--on-accent);
+  font-size:11.5px;letter-spacing:0.05em;font-weight:700;text-align:center;padding:8px 20px;line-height:1.4;
+  border-bottom:1px solid rgba(0,0,0,0.25);}
+html[data-theme="white"] .goalbar{border-bottom:none;}
+
+/* ─────────── LAYOUT ─────────── */
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:126px 22px 90px;}
+.hero{padding:20px 0 44px;border-bottom:1px solid var(--border);margin-bottom:40px;}
+.hero-tag{font-size:10px;letter-spacing:0.22em;color:var(--accent);text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.hero-tag::before{content:'';width:26px;height:1px;background:var(--accent);box-shadow:0 0 12px rgba(var(--accent-rgb),0.42);}
+.hero-title{font-family:'Special Elite',cursive;font-size:clamp(34px,7vw,68px);line-height:1.05;letter-spacing:-0.02em;margin-bottom:16px;}
+.hero-title em{font-style:normal;color:var(--accent);text-shadow:var(--neon-text);}
+.hero-sub{font-size:14px;color:var(--lgrey);line-height:1.75;max-width:640px;}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
+.chip{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);border:1px solid var(--border);padding:5px 11px;border-radius:2px;}
+.chip.acc{color:var(--accent);border-color:var(--accent2);}
+
+/* section */
+.sec{margin-bottom:54px;scroll-margin-top:132px;}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;
+  border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:22px;}
+.sec-kicker{font-size:9.5px;letter-spacing:0.2em;color:var(--accent);text-transform:uppercase;margin-bottom:8px;}
+.sec-title{font-size:clamp(19px,3vw,29px);font-weight:700;letter-spacing:-0.01em;line-height:1.15;display:flex;align-items:center;gap:11px;}
+.sec-title em{font-style:normal;color:var(--accent);text-shadow:var(--neon-text);}
+.sec-n{font-size:11px;color:var(--grey);letter-spacing:0.12em;white-space:nowrap;flex-shrink:0;}
+.stack{display:flex;flex-direction:column;gap:12px;}
+
+/* ─────────── BLOCK ─────────── */
+.blk{--role:var(--c-me);--role-rgb:var(--c-me-rgb);
+  background:var(--card);border:1px solid var(--border2);border-left:3px solid var(--role);
+  border-radius:7px;padding:15px 17px 13px;position:relative;transition:border-color .25s,background .25s;}
+.blk:hover{background:var(--card2);border-color:rgba(var(--role-rgb),0.4);border-left-color:var(--role);}
+.blk.me{--role:var(--c-me);--role-rgb:var(--c-me-rgb);}
+.blk.cl{--role:var(--c-cl);--role-rgb:var(--c-cl-rgb);}
+.blk.obj{--role:var(--c-obj);--role-rgb:var(--c-obj-rgb);}
+.blk.goal{--role:var(--c-goal);--role-rgb:var(--c-goal-rgb);}
+.blk.win{--role:var(--c-win);--role-rgb:var(--c-win-rgb);background:rgba(var(--c-win-rgb),0.07);border-color:rgba(var(--c-win-rgb),0.35);}
+.blk-lbl{font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--role);
+  margin-bottom:9px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.blk-lbl b{font-weight:400;opacity:.55;letter-spacing:0.1em;}
+.blk-en{font-size:15px;line-height:1.62;color:var(--white);white-space:pre-line;}
+.blk-en .hl{color:var(--role);}
+.blk-en .fill{display:inline-block;min-width:64px;border-bottom:1px dashed var(--role);color:var(--role);text-align:center;}
+.blk-note{font-size:12.5px;color:var(--lgrey);line-height:1.65;margin-top:9px;padding-top:9px;border-top:1px solid var(--border);}
+.blk-note b{color:var(--white);font-weight:400;}
+
+/* RU dropdown */
+.ru{margin-top:0;}
+.tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.ru-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Share Tech Mono',monospace;
+  font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;
+  color:var(--lgrey);background:transparent;border:1px solid var(--border2);border-radius:4px;
+  padding:6px 11px;cursor:pointer;transition:all .22s;}
+.ru-btn:hover{color:var(--role);border-color:rgba(var(--role-rgb),0.55);}
+.ru-btn .cv{width:11px;height:11px;transition:transform .3s cubic-bezier(.2,.9,.3,1.2);}
+.ru-btn.open{color:var(--role);border-color:rgba(var(--role-rgb),0.55);background:rgba(var(--role-rgb),0.07);}
+.ru-btn.open .cv{transform:rotate(180deg);}
+.ru-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .34s cubic-bezier(.3,.9,.3,1);}
+.ru.open .ru-body{grid-template-rows:1fr;}
+.ru-inner{overflow:hidden;}
+.ru-txt{font-size:13.5px;line-height:1.65;color:var(--lgrey);white-space:pre-line;
+  margin-top:11px;padding:11px 13px;background:rgba(var(--role-rgb),0.05);
+  border-left:2px solid rgba(var(--role-rgb),0.45);border-radius:0 5px 5px 0;font-style:italic;}
+
+/* ─────────── SPEAK ─────────── */
+.sp-btn{display:inline-flex;align-items:center;gap:7px;font-family:'Share Tech Mono',monospace;
+  font-size:10.5px;letter-spacing:0.13em;text-transform:uppercase;
+  color:var(--accent);background:var(--accent3);border:1px solid var(--accent2);border-radius:4px;
+  padding:6px 11px;cursor:pointer;transition:all .2s;}
+.sp-btn:hover{background:var(--accent);color:var(--on-accent);border-color:var(--accent);box-shadow:0 0 18px rgba(var(--accent-rgb),0.28);}
+.sp-btn svg{width:12px;height:12px;flex-shrink:0;fill:currentColor;stroke:none;}
+.sp-btn .eq{display:none;align-items:flex-end;gap:2px;height:12px;width:12px;}
+.sp-btn .eq i{display:block;width:2.5px;background:currentColor;border-radius:1px;animation:eqb .9s ease-in-out infinite;}
+.sp-btn .eq i:nth-child(1){height:5px;animation-delay:0s;}
+.sp-btn .eq i:nth-child(2){height:11px;animation-delay:.18s;}
+.sp-btn .eq i:nth-child(3){height:7px;animation-delay:.36s;}
+@keyframes eqb{0%,100%{transform:scaleY(.35);}50%{transform:scaleY(1);}}
+.sp-btn.playing{background:var(--accent);color:var(--on-accent);border-color:var(--accent);box-shadow:var(--glow);}
+.sp-btn.playing svg{display:none;}
+.sp-btn.playing .eq{display:flex;}
+.blk.speaking,.sms.speaking{border-color:var(--accent);box-shadow:0 0 0 1px rgba(var(--accent-rgb),0.25),0 0 34px rgba(var(--accent-rgb),0.12);}
+@media(prefers-reduced-motion:reduce){.sp-btn .eq i{animation:none;}}
+
+/* floating player */
+.player{position:fixed;left:50%;bottom:18px;transform:translate(-50%,140%);z-index:700;
+  display:flex;align-items:center;gap:12px;width:min(560px,calc(100vw - 24px));
+  background:var(--menu-bg);backdrop-filter:blur(22px);border:1px solid var(--accent2);
+  border-radius:9px;padding:10px 12px;box-shadow:var(--menu-shadow),0 0 0 1px rgba(var(--accent-rgb),0.08);
+  transition:transform .35s cubic-bezier(.2,.9,.3,1.2),opacity .25s;opacity:0;pointer-events:none;}
+.player.on{transform:translate(-50%,0);opacity:1;pointer-events:auto;}
+.player .pw{display:flex;align-items:flex-end;gap:2.5px;height:15px;flex-shrink:0;}
+.player .pw i{display:block;width:3px;background:var(--accent);border-radius:1px;animation:eqb .9s ease-in-out infinite;}
+.player .pw i:nth-child(1){height:7px;}.player .pw i:nth-child(2){height:15px;animation-delay:.18s;}
+.player .pw i:nth-child(3){height:10px;animation-delay:.36s;}.player .pw i:nth-child(4){height:13px;animation-delay:.54s;}
+.player .ptxt{font-size:11.5px;color:var(--lgrey);line-height:1.4;overflow:hidden;text-overflow:ellipsis;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;flex:1;min-width:0;}
+.player .pstop{font-family:'Share Tech Mono',monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;
+  background:var(--accent);color:var(--on-accent);border:none;border-radius:4px;padding:7px 13px;cursor:pointer;flex-shrink:0;}
+.player .pstop:hover{box-shadow:var(--glow);}
+
+/* arrows / branches */
+.arrow{font-size:15px;color:var(--grey);text-align:center;line-height:1;padding:2px 0;letter-spacing:0.1em;}
+.arrow.l{text-align:left;}
+.blabel{display:flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;letter-spacing:0.13em;
+  text-transform:uppercase;padding:2px 0;}
+.blabel::after{content:'';flex:1;height:1px;background:currentColor;opacity:.22;}
+.blabel.g{color:var(--c-me);}.blabel.r{color:var(--c-obj);}.blabel.y{color:var(--c-cl);}.blabel.b{color:var(--c-goal);}
+.branch{border-left:2px solid var(--border2);padding-left:14px;display:flex;flex-direction:column;gap:9px;}
+.branch.g{border-color:rgba(var(--c-me-rgb),0.45);}
+.branch.r{border-color:rgba(var(--c-obj-rgb),0.45);}
+.branch.y{border-color:rgba(var(--c-cl-rgb),0.45);}
+.branch.b{border-color:rgba(var(--c-goal-rgb),0.45);}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start;}
+
+/* callout */
+.callout{background:var(--dark);border:1px solid var(--border2);border-radius:7px;padding:16px 18px;}
+.callout .co-h{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.callout p{font-size:13.5px;line-height:1.7;color:var(--lgrey);}
+.callout p b{color:var(--white);font-weight:400;}
+.pause{background:rgba(var(--c-cl-rgb),0.09);border:1px dashed rgba(var(--c-cl-rgb),0.5);border-radius:6px;
+  padding:11px 14px;font-size:12.5px;letter-spacing:0.05em;color:var(--c-cl);text-align:center;line-height:1.5;}
+.silence{background:var(--accent);color:var(--on-accent);border-radius:7px;padding:14px 18px;text-align:center;
+  font-size:14px;font-weight:700;letter-spacing:0.06em;line-height:1.4;box-shadow:var(--glow);}
+
+/* prep / checklist */
+.plist{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:7px;overflow:hidden;}
+.pitem{background:var(--card);padding:18px 17px;transition:background .25s;}
+.pitem:hover{background:var(--card2);}
+.pitem .pn{font-size:10px;letter-spacing:0.16em;color:var(--accent);margin-bottom:11px;}
+.pitem .pt{font-size:13.5px;line-height:1.6;color:var(--white);}
+.pitem .pr{font-size:12px;line-height:1.55;color:var(--grey);margin-top:8px;font-style:italic;}
+
+/* link + copy */
+.linkbox{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--dark);
+  border:1px solid var(--accent2);border-radius:7px;padding:14px 16px;}
+.linkbox a{font-size:14px;color:var(--accent);text-decoration:none;word-break:break-all;flex:1;min-width:200px;}
+.linkbox a:hover{text-decoration:underline;}
+.cpy{font-family:'Share Tech Mono',monospace;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;
+  background:transparent;color:var(--lgrey);border:1px solid var(--border2);border-radius:4px;padding:7px 12px;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.cpy:hover{border-color:var(--accent);color:var(--accent);}
+.cpy.done{background:var(--accent);color:var(--on-accent);border-color:var(--accent);}
+
+/* calculator */
+.calc{background:var(--dark);border:1px solid var(--border2);border-radius:8px;padding:20px 18px;}
+.calc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px;}
+.cfield label{display:block;font-size:10px;letter-spacing:0.13em;text-transform:uppercase;color:var(--grey);margin-bottom:7px;line-height:1.4;}
+.cfield input{width:100%;font-family:'Share Tech Mono',monospace;font-size:19px;color:var(--white);
+  background:var(--card);border:1px solid var(--border2);border-radius:5px;padding:10px 12px;outline:none;transition:border-color .2s;}
+.cfield input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent3);}
+.calc-out{border-top:1px solid var(--border);padding-top:16px;display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.calc-out .col{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);line-height:1.6;}
+.big-num{font-family:'Share Tech Mono',monospace;font-size:clamp(30px,6vw,50px);font-weight:700;color:var(--accent);
+  line-height:1;text-shadow:var(--neon-text);}
+.calc-sub{font-size:12px;color:var(--lgrey);margin-top:12px;line-height:1.6;}
+
+/* sms template */
+.sms{--role:var(--c-me);--role-rgb:var(--c-me-rgb);background:var(--card);border:1px solid var(--border2);border-radius:7px;padding:15px 17px;}
+.sms-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:11px;flex-wrap:wrap;}
+.sms-h .t{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);}
+.sms-body{font-size:14px;line-height:1.65;color:var(--white);white-space:pre-line;}
+
+/* checklist */
+.check{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:9px;}
+.citem{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);
+  border-radius:5px;padding:11px 13px;font-size:13px;color:var(--lgrey);cursor:pointer;transition:all .2s;user-select:none;}
+.citem:hover{border-color:var(--border2);color:var(--white);}
+.citem .box{width:15px;height:15px;border:1px solid var(--border2);border-radius:3px;flex-shrink:0;transition:all .2s;position:relative;}
+.citem.on{color:var(--white);border-color:rgba(var(--accent-rgb),0.4);}
+.citem.on .box{background:var(--accent);border-color:var(--accent);}
+.citem.on .box::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--on-accent);font-size:11px;font-weight:700;}
+
+/* legend */
+.legend{display:flex;gap:16px;flex-wrap:wrap;padding:16px 0 0;border-top:1px solid var(--border);margin-top:32px;}
+.leg{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--grey);letter-spacing:0.06em;}
+.leg-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0;}
+
+/* side rail */
+.rail{position:fixed;top:50%;right:20px;transform:translateY(-50%);z-index:400;display:flex;flex-direction:column;gap:9px;}
+.rail a{display:flex;align-items:center;gap:9px;text-decoration:none;justify-content:flex-end;}
+.rail .rl{font-size:9.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);opacity:0;transform:translateX(6px);
+  transition:opacity .25s,transform .25s;white-space:nowrap;}
+.rail a:hover .rl{opacity:1;transform:none;color:var(--white);}
+.rail .rd{width:7px;height:7px;border-radius:50%;background:var(--border2);transition:all .25s;flex-shrink:0;}
+.rail a:hover .rd,.rail a.on .rd{background:var(--accent);box-shadow:0 0 10px rgba(var(--accent-rgb),0.6);}
+.rail a.on .rl{opacity:1;transform:none;color:var(--accent);}
+@media(max-width:1320px){.rail{display:none;}}
+
+/* views */
+.view{display:none;}
+.view.on{display:block;animation:fade .35s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+
+footer{position:relative;z-index:1;padding:26px;border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  font-size:10.5px;color:var(--grey);letter-spacing:0.06em;}
+
+@media(max-width:820px){
+  nav{padding:0 11px;gap:6px;height:58px;}
+  .nav-right{gap:6px;}
+  .nav-logo-text{display:none;}
+  .vlong{display:none;}
+  .vswitch{padding:2px;}
+  .vbtn{padding:6px 12px;}
+  .icon-btn{height:29px;}
+  .goalbar{top:58px;font-size:10px;padding:7px 12px;}
+  .wrap{padding:118px 14px 70px;}
+  .cols,.cols3,.plist,.calc-grid{grid-template-columns:1fr;}
+  .vbtn{padding:6px 10px;font-size:11px;}
+  .icon-btn{padding:0 9px;}
+  .blk{padding:13px 14px 12px;}
+  .blk-en{font-size:14.5px;}
+  .sec-head{flex-direction:column;align-items:flex-start;gap:6px;}
+}
+@media(max-width:430px){
+  .icon-btn .lbl-txt{display:none;}
+  .icon-btn{padding:0 7px;font-size:10.5px;}
+  nav{padding:0 8px;gap:5px;}
+  .nav-right{gap:5px;}
+  .vbtn{padding:6px 9px;}
+  .nav-logo-mark{width:31px;height:31px;font-size:13px;}
+  .ts-btn{padding:0 7px;gap:6px;}
+}
+@media print{
+  body{background:#fff;color:#000;}
+  body::before,nav,.goalbar,.rail,.ru-btn,.sp-btn,.tools,.player,.scroll-line,footer{display:none!important;}
+  .wrap{padding:0;max-width:none;}
+  .view{display:block!important;}
+  .ru-body{grid-template-rows:1fr!important;}
+  .blk{break-inside:avoid;background:#fff;border-color:#bbb;}
+  .sec{break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+<div class="scroll-line" id="sl"></div>
+
+<nav>
+  <a class="nav-logo" href="#top">
+    <div class="nav-logo-mark">N.</div>
+    <div class="nav-logo-text">NO.SITE<small>COLD CALL OS</small></div>
+  </a>
+  <div class="nav-right">
+    <div class="vswitch">
+      <button class="vbtn on" data-v="v1">V1<span class="vlong"> · CUSTOMER</span></button>
+      <button class="vbtn" data-v="v2">V2<span class="vlong"> · TREE</span></button>
+    </div>
+    <button class="icon-btn" id="rateBtn" title="Скорость озвучки">1.0×</button>
+    <button class="icon-btn" id="ruAll" title="Показать/скрыть все переводы"><span>RU</span><span class="lbl-txt">ВСЕ</span></button>
+    <div class="theme-select" id="tsel">
+      <button class="ts-btn" id="tbtn" aria-haspopup="listbox" aria-expanded="false">
+        <span class="ts-dot"></span>
+        <svg class="ts-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="ts-menu" role="listbox">
+        <button class="ts-opt" data-t="green" role="option" aria-selected="true"><span class="ts-sw sw-green"></span><span>GREEN</span><svg class="ts-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></button>
+        <button class="ts-opt" data-t="red" role="option" aria-selected="false"><span class="ts-sw sw-red"></span><span>RED</span><svg class="ts-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></button>
+        <button class="ts-opt" data-t="white" role="option" aria-selected="false"><span class="ts-sw sw-white"></span><span>WHITE</span><svg class="ts-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="goalbar">🎯 GOAL — not to sell a website on the phone, but to get the number + a yes to look at the demo</div>
+
+<div class="rail" id="rail"></div>
+
+<div class="wrap" id="top">
+<!-- ═══════════════════ V1 ═══════════════════ -->
+<div class="view on" id="v1">
+
+<div class="hero">
+  <div class="hero-tag">Version 1 · Cold call · Cleaning &amp; local service</div>
+  <h1 class="hero-title">THE <em>CUSTOMER</em><br>APPROACH</h1>
+  <p class="hero-sub">You call in as a customer, get his real numbers out of him, then flip to the offer with his own math in your hand. English is the base — the RU button under every block is your safety net.</p>
+  <div class="hero-meta">
+    <span class="chip acc">GOAL: number + yes to the demo</span>
+    <span class="chip">11 sections</span>
+    <span class="chip">avg. call 6–9 min</span>
+    <span class="chip">objections sheet included</span>
+  </div>
+</div>
+
+<!-- ── PREP ── -->
+<section class="sec" id="s-prep">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Before you dial</div><h2 class="sec-title">⏱ <em>PREP</em> — 2 MINUTES</h2></div>
+    <div class="sec-n">00 / 11</div>
+  </div>
+  <div class="plist">
+    <div class="pitem"><div class="pn">01</div><div class="pt">Find 2 local competitors with genuinely expensive-looking sites + their price for the same job.</div><div class="pr">Найди 2 местных конкурента с реально дорогими сайтами + их цену за такую же работу.</div></div>
+    <div class="pitem"><div class="pn">02</div><div class="pt">Check whether the number takes SMS / WhatsApp.</div><div class="pr">Проверь, принимает ли номер SMS / WhatsApp.</div></div>
+    <div class="pitem"><div class="pn">03</div><div class="pt">Open the demo in a tab so you can read it out while he looks.</div><div class="pr">Открой демо во вкладке, чтобы вести его по экрану, пока он смотрит.</div></div>
+  </div>
+</section>
+
+<!-- ── OPENING ── -->
+<section class="sec" id="s-open">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Block 1 · you are a customer, nothing else</div><h2 class="sec-title">📞 <em>OPENING</em></h2></div>
+    <div class="sec-n">01 / 11</div>
+  </div>
+  <div class="stack">
+
+    <div class="blk win"><div class="blk-lbl">📞 OWNER PICKED UP</div><div class="blk-en">From this second you are Cane, a guy who needs his apartment cleaned. Nothing about websites until the trigger question.</div>
+      <div class="ru" data-ru="С этой секунды ты — Кейн, парень, которому надо убрать квартиру. Ни слова про сайты до триггерного вопроса."></div></div>
+
+    <div class="blk me"><div class="blk-lbl">I SAY <b>· opening as a customer</b></div>
+      <div class="blk-en">"Hi, my name is Cane, I'm looking for a cleaning service.
+
+It's a 2-bedroom apartment, about <span class="hl">800 square feet</span>, downtown. Just standard recurring cleaning — should be about 4 hours.
+
+How much would that cost?"</div>
+      <div class="ru" data-ru="«Здравствуйте, меня зовут Кейн, ищу клининг. Двухкомнатная квартира, около 800 кв. футов, в центре. Обычная регулярная уборка — часа на 4. Сколько будет стоить?»"></div>
+      <div class="blk-note"><b>Почему 800, а не 80:</b> 80 кв. футов — это кладовка. Владелец ловит фальшь мгновенно, и звонок мёртв. 800 кв. футов = нормальная двушка.</div></div>
+
+    <div class="arrow">↓</div>
+
+    <div class="cols">
+      <div class="branch y">
+        <div class="blabel y">← "I'd have to see the place"</div>
+        <div class="blk cl"><div class="blk-lbl">CLIENT SAYS</div><div class="blk-en">"I can't quote without seeing it."</div>
+          <div class="ru" data-ru="«Не могу назвать цену, не посмотрев.»"></div></div>
+        <div class="arrow l">↓</div>
+        <div class="blk me"><div class="blk-lbl">I SAY <b>· push for a range</b></div>
+          <div class="blk-en">"Got it — I'll send you photos on WhatsApp. But give me a range right now, just so I know the budget. It's a 4-hour job."</div>
+          <div class="ru" data-ru="«Понял — скину фото в WhatsApp. Но дайте вилку прямо сейчас, чтобы я понимал бюджет. Работа на 4 часа.»"></div></div>
+      </div>
+      <div class="branch g">
+        <div class="blabel g">→ he names a number</div>
+        <div class="blk me"><div class="blk-lbl">I SAY <b>· lock the number in</b></div>
+          <div class="blk-en">"So for 800 square feet we're looking at around <span class="fill">$300–500</span>?
+
+Okay, bro, got it."</div>
+          <div class="ru" data-ru="«То есть за 800 кв. футов это примерно $300–500? Окей, брат, понял.»"></div></div>
+        <div class="arrow l">↓</div>
+        <div class="blk goal"><div class="blk-lbl">🎯 ACTION</div><div class="blk-en">Write the number down. Everything in the money block is built on it — not on a made-up story.</div>
+          <div class="ru" data-ru="Запиши цифру. Весь денежный блок строится на ней, а не на выдуманной истории."></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DISCOVERY ── -->
+<section class="sec" id="s-disc">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Block 2 · one at a time, casual, still just a customer</div><h2 class="sec-title">🔍 <em>DISCOVERY</em></h2></div>
+    <div class="sec-n">02 / 11</div>
+  </div>
+  <div class="stack">
+
+    <div class="blk me"><div class="blk-lbl">QUESTION 1 <b>· how booked they are</b></div>
+      <div class="blk-en">"Could we book it for the same day, or are you booked out for the week?"</div>
+      <div class="ru" data-ru="«А можно на сегодня, или у вас всё занято на неделю вперёд?»"></div></div>
+
+    <div class="blk me"><div class="blk-lbl">QUESTION 2 <b>· years + decision maker</b></div>
+      <div class="blk-en">"Sounds good. How long have you been doing this?
+
+…And you're the owner, right?"</div>
+      <div class="ru" data-ru="«Отлично. А давно этим занимаетесь? …И вы владелец, верно?»"></div>
+      <div class="blk-note"><b>Ключевой момент:</b> если он не ЛПР — переходи к возражению «I'm not the owner» в листе возражений.</div></div>
+
+    <div class="blk me"><div class="blk-lbl">QUESTION 3 <b>· capacity</b></div>
+      <div class="blk-en">"It's not a secret — how many jobs can you fit in a day?"</div>
+      <div class="ru" data-ru="«Это же не секрет — сколько объектов в день вы вытягиваете?»"></div></div>
+
+    <div class="blk me"><div class="blk-lbl">QUESTION 4 <b>· solo or crew</b></div>
+      <div class="blk-en">"Do you run the jobs yourself, or do you have a crew?"</div>
+      <div class="ru" data-ru="«Вы сами выезжаете на объекты или у вас бригада?»"></div></div>
+
+    <div class="blk me"><div class="blk-lbl">QUESTION 5 <b>· traffic source</b></div>
+      <div class="blk-en">"Okay, bro — tell me one more thing.
+
+Where do your customers come from right now? Yelp, Google, Facebook, referrals?"</div>
+      <div class="ru" data-ru="«Окей, брат — ещё один момент. Откуда сейчас приходят клиенты? Yelp, Google, Facebook, сарафан?»"></div></div>
+
+    <div class="callout"><div class="co-h">Why one at a time</div><p>Пять вопросов подряд = допрос, и он закрывается. Один вопрос — его ответ — твоя реакция («okay», «sounds good») — следующий вопрос. Ты <b>клиент, который просто болтает</b>, а не менеджер, заполняющий анкету. К концу блока у тебя есть: цена за объект, объектов в день, стаж, ЛПР, канал трафика.</p></div>
+  </div>
+</section>
+
+<!-- ── TRIGGER ── -->
+<section class="sec" id="s-trig">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Block 3 · the pivot</div><h2 class="sec-title">🔑 <em>TRIGGER QUESTION</em></h2></div>
+    <div class="sec-n">03 / 11</div>
+  </div>
+  <div class="stack">
+
+    <div class="blk me"><div class="blk-lbl">I SAY <b>· the pivot</b></div>
+      <div class="blk-en">"Quick question — do you have a website?"</div>
+      <div class="ru" data-ru="«Быстрый вопрос — а сайт у вас есть?»"></div></div>
+
+    <div class="pause">⏸ PAUSE. Let him answer fully. Don't fill the silence.<br>Пауза. Дай ответить до конца. Не заполняй тишину.</div>
+    <div class="arrow">↓</div>
+
+    <div class="cols">
+      <div class="branch r">
+        <div class="blabel r">→ "NO, WE DON'T"</div>
+        <div class="blk me"><div class="blk-lbl">I SAY <b>· trust, not decoration</b></div>
+          <div class="blk-en">"Here's the thing — a website is trust. It's the proof you're a real operation. And when the site actually looks expensive and modern, a first-time customer sees a premium company before you've said a word.
+
+Three years ago a site like that cost $3,000–5,000. Today, with AI tools, it costs about what you make on <span class="hl">2–3 jobs</span>.
+
+And you've been doing this <span class="fill">3</span> years, you're the owner — you know where the money in your business is."</div>
+          <div class="ru" data-ru="«Смотрите — сайт это доверие. Это доказательство, что вы реальная компания. А когда сайт ещё и выглядит дорого и современно, новый клиент видит премиум-компанию раньше, чем вы сказали хоть слово. Три года назад такой сайт стоил $3000–5000. Сегодня, с AI-инструментами, это цена 2–3 ваших объектов. И вы в этом уже 3 года, вы владелец — вы понимаете, где в вашем бизнесе деньги.»"></div></div>
+      </div>
+      <div class="branch b">
+        <div class="blabel b">→ "YES, WE HAVE ONE"</div>
+        <div class="blk me"><div class="blk-lbl">I SAY <b>· this is how you get the contact</b></div>
+          <div class="blk-en">"Nice — where can I take a look? Can you send it to me on WhatsApp?"</div>
+          <div class="ru" data-ru="«Отлично — где можно посмотреть? Скиньте мне в WhatsApp.»"></div></div>
+        <div class="arrow l">↓</div>
+        <div class="blk win"><div class="blk-lbl">✅ CONTACT SECURED</div>
+          <div class="blk-en">He just confirmed the channel himself. Now you have a live thread to send the demo into — that was the whole point of the call.</div>
+          <div class="ru" data-ru="Он сам подтвердил канал связи. Теперь у тебя живая переписка, куда упадёт демо — ради этого и был звонок."></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPETITORS ── -->
+<section class="sec" id="s-comp">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Block 4 · real competitors beat an invented story</div><h2 class="sec-title">🏙 <em>COMPARISON</em></h2></div>
+    <div class="sec-n">04 / 11</div>
+  </div>
+  <div class="stack">
+    <div class="blk me"><div class="blk-lbl">I SAY <b>· competitors by name</b></div>
+      <div class="blk-en">"Before I called I looked at a few of your competitors in town. They've got a serious website — AI integration, the whole thing. Looks like a <span class="hl">$3,000</span> site.
+
+And for the same 800 square-foot job they charge <span class="fill">$400–700</span>.
+
+They've been around less time than you and they have less experience. But they get the first impression, because the website already looks premium."</div>
+      <div class="ru" data-ru="«Перед звонком я посмотрел нескольких ваших конкурентов по городу. У них серьёзный сайт — с AI-интеграцией, всё как надо. Выглядит на $3000. И за такой же объект в 800 кв. футов они берут $400–700. Они на рынке меньше вас и опыта у них меньше. Но первое впечатление забирают они — потому что сайт уже выглядит премиально.»"></div>
+      <div class="blk-note"><b>Обязательно:</b> называй реальные имена, которые нашёл в prep. «Один парень в вашем городе» — это пустой звук, а «[Name] Cleaning на первой странице Google» — это факт, который он может проверить и который его цепляет.</div></div>
+  </div>
+</section>
+
+<!-- ── MONEY ── -->
+<section class="sec" id="s-money">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Block 5 · his numbers, not yours</div><h2 class="sec-title">💰 <em>MONEY MATH</em></h2></div>
+    <div class="sec-n">05 / 11</div>
+  </div>
+  <div class="stack">
+
+    <div class="calc">
+      <div class="calc-grid">
+        <div class="cfield"><label>His price per job, $</label><input type="number" id="cPrice" value="400" min="0" step="10"></div>
+        <div class="cfield"><label>Uplift with a site, +$</label><input type="number" id="cUp" value="40" min="0" step="5"></div>
+        <div class="cfield"><label>Jobs per day</label><input type="number" id="cJobs" value="3" min="0" step="1"></div>
+      </div>
+      <div class="calc-out">
+        <div class="col">Extra per month<br>× 22 working days</div>
+        <div class="big-num" id="cOut">$2,640</div>
+      </div>
+      <div class="calc-sub" id="cLine">$400 → $440 per job · 3 jobs/day · 22 days = <b>+$2,640/mo</b> + a premium brand image</div>
+    </div>
+
+    <div class="blk me"><div class="blk-lbl">I SAY <b>· say it slow</b></div>
+      <div class="blk-en">"Now picture that over a month, at your volume — an extra $20, $30, $50 on every single job."</div>
+      <div class="ru" data-ru="«А теперь представьте это на дистанции месяца, при вашем объёме — плюс $20, $30, $50 на каждом объекте.»"></div></div>
+
+    <div class="callout"><div class="co-h">⚠ How to phrase the numbers</div><p>"Out of 10 inquiries you'll close 5 instead of 2" — <b>say it as example math, not as a promise:</b> "in our cases we've seen conversion roughly double." An owner who counts money spots an empty guarantee in a second — and that's exactly where you lose the deal. Real competitors plus his own numbers convince far harder than an invented story.</p>
+      <div class="ru" data-ru="«Из 10 обращений закроете 5 вместо 2» — говори как пример расчёта, не как обещание: «в наших кейсах конверсия примерно удваивалась». Владелец, который считает деньги, ловит пустую гарантию мгновенно — и именно там ты теряешь сделку. Реальные конкуренты плюс его собственные цифры убеждают в разы сильнее выдуманной истории." style="display:block;margin-top:12px"></div></div>
+  </div>
+</section>
+
+<!-- ── OFFER ── -->
+<section class="sec" id="s-offer">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Block 6 · four parts, in this order</div><h2 class="sec-title">📢 <em>THE OFFER</em></h2></div>
+    <div class="sec-n">06 / 11</div>
+  </div>
+  <div class="stack">
+
+    <div class="blk me"><div class="blk-lbl">PART 1 <b>· what it is</b></div>
+      <div class="blk-en">"We build modern websites where the whole build runs on AI. I'm talking about a site that looks like $5,000 — and three years ago that's exactly what it cost. Today, with AI tools, it's <span class="hl">2–3 days of work and the price of 3 of your jobs</span>."</div>
+      <div class="ru" data-ru="«Мы делаем современные сайты, где вся сборка идёт на AI. Речь о сайте, который выглядит на $5000 — и три года назад он столько и стоил. Сегодня, с AI-инструментами, это 2–3 дня работы и цена трёх ваших объектов.»"></div></div>
+
+    <div class="blk me"><div class="blk-lbl">PART 2 <b>· the GPT chatbot</b></div>
+      <div class="blk-en">"The site has a GPT-powered chatbot built in. It walks the customer through it and builds the request — what, where, how big, when. It checks your Google Calendar and offers the slots you actually have open."</div>
+      <div class="ru" data-ru="«В сайт встроен чат-бот на GPT: консультирует клиента и формирует заявку — что, где, сколько, когда. Сверяется с вашим Google-календарём и предлагает реально свободные слоты.»"></div></div>
+
+    <div class="blk me"><div class="blk-lbl">PART 3 <b>· the request hits your phone</b></div>
+      <div class="blk-en">"The request lands on your phone: Friday 5 PM, this address, 800 square feet, deep clean. You approve it — the bot locks the customer in and blocks 5 to 8 PM on your calendar."</div>
+      <div class="ru" data-ru="«Заявка падает вам на телефон: пятница, 17:00, этот адрес, 800 кв. футов, генеральная. Вы подтверждаете — бот фиксирует клиента и ставит в календаре занятость с 17 до 20.»"></div></div>
+
+    <div class="blk me"><div class="blk-lbl">PART 4 <b>· Google &amp; support</b></div>
+      <div class="blk-en">"It gets indexed on Google, so it brings you customers without ad spend. We do everything turnkey, hosting and upkeep included. All we need from you is the business name and what you want. After launch we stay on for edits."</div>
+      <div class="ru" data-ru="«Сайт индексируется в Google и приводит клиентов без затрат на рекламу. Всё под ключ, хостинг и содержание включены. От вас — название бизнеса и пожелания. После запуска остаёмся на связи для правок.»"></div></div>
+  </div>
+</section>
+
+<!-- ── DEMO ── -->
+<section class="sec" id="s-demo">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Block 7 · the thing that actually sells</div><h2 class="sec-title">📱 <em>THE DEMO</em></h2></div>
+    <div class="sec-n">07 / 11</div>
+  </div>
+  <div class="stack">
+
+    <div class="linkbox">
+      <span style="font-size:10px;letter-spacing:.16em;color:var(--grey);text-transform:uppercase">Link you give</span>
+      <a href="https://fx-socialclub.github.io/Media_Buyer" target="_blank" rel="noopener" id="demoLink">fx-socialclub.github.io/Media_Buyer</a>
+      <button class="cpy" data-copy="https://fx-socialclub.github.io/Media_Buyer">Copy</button>
+    </div>
+
+    <div class="blk me"><div class="blk-lbl">I SAY <b>· while he's looking</b></div>
+      <div class="blk-en">"Open it on your phone, give it 30 seconds.
+
+Top of the screen switches between three languages — one tap. Next to it, three color themes, so the visitor picks how they want to read it. The animations are what you normally see on big-company sites. It loads in about a second, and on a phone it looks exactly like it does on a desktop.
+
+Be honest — does that look like a $50 website or a $5,000 one?"</div>
+      <div class="ru" data-ru="«Откройте с телефона, дайте 30 секунд. Сверху переключаются три языка — в один тап. Рядом три цветовые темы, посетитель сам выбирает, как ему смотреть. Анимации такие, какие обычно видишь у крупных компаний. Грузится за секунду, и с телефона выглядит так же, как с компьютера. Скажите честно — это похоже на сайт за $50 или за $5000?»"></div></div>
+
+    <div class="silence">🤐 STAY QUIET WHILE HE LOOKS · WHOEVER SPEAKS FIRST LOSES<br><span style="font-size:11.5px;font-weight:400;opacity:.8">Молчи, пока он смотрит. Кто заговорит первым — проиграл.</span></div>
+
+    <div class="callout"><div class="co-h">Why this example works</div><p>Three languages + three themes + load speed — <b>visible in 5 seconds</b> and nowhere to be found on a Yelp listing. Follow immediately with: "and here are examples from cleaning businesses specifically."</p>
+      <div class="ru" data-ru="Три языка + три темы + скорость — видно за 5 секунд, и ничего такого нет у конкурентов на Yelp. Сразу дальше: «а вот примеры именно по клинингу»." style="display:block;margin-top:12px"></div></div>
+  </div>
+</section>
+
+<!-- ── CLOSE ── -->
+<section class="sec" id="s-close">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Block 8 · ask for the small yes</div><h2 class="sec-title">🎯 <em>THE CLOSE</em></h2></div>
+    <div class="sec-n">08 / 11</div>
+  </div>
+  <div class="stack">
+
+    <div class="blk me"><div class="blk-lbl">I SAY <b>· the close</b></div>
+      <div class="blk-en">"Let me text you a few examples right now, including ones from your industry. If the look grabs you, we talk details. If it does nothing for you, just tell me 'thanks, not for me' — no hard feelings.
+
+But I'm confident in what we build. Worth a look?"</div>
+      <div class="ru" data-ru="«Давайте я скину вам несколько примеров прямо сейчас, включая примеры из вашей сферы. Если визуал зацепит — обсудим детали. Если не вызовет эмоций — просто скажете «спасибо, не моё», без обид. Но я уверен в своих сайтах. Стоит взглянуть?»"></div></div>
+
+    <div class="arrow">↓</div>
+
+    <div class="branch g">
+      <div class="blabel g">→ "SURE, SEND IT"</div>
+      <div class="blk me"><div class="blk-lbl">I SAY <b>· confirm the channel, then hang up</b></div>
+        <div class="blk-en">"Perfect — is this number good for a text, or do you prefer WhatsApp? You'll have it within the hour. Thanks, have a good one!"</div>
+        <div class="ru" data-ru="«Отлично — на этот номер можно писать, или удобнее WhatsApp? Будет в течение часа. Спасибо, хорошего дня!»"></div></div>
+      <div class="arrow l">↓</div>
+      <div class="blk win"><div class="blk-lbl">🏆 GOAL ACHIEVED</div>
+        <div class="blk-en">Text him within the hour, while he still remembers the call. Don't "sleep on it" — by tomorrow you're a stranger again.</div>
+        <div class="ru" data-ru="Пиши в течение часа, пока он помнит разговор. Не «завтра на свежую голову» — к завтрашнему дню ты снова незнакомец."></div></div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="blk goal"><div class="blk-lbl">💵 UPSELL <b>· only after a yes</b></div>
+      <div class="blk-en">"We also run Facebook ads in your vertical — we've gotten leads down to <span class="fill">$__</span> in this space, and I have real case numbers I can show you alongside the sites."</div>
+      <div class="ru" data-ru="«Мы также запускаем рекламу в Facebook в вашей вертикали — доводили лид до $__ в этой нише, есть реальные кейсы с цифрами, покажу вместе с сайтами.»"></div>
+      <div class="blk-note"><b>Никогда до «да».</b> Второй оффер до первого согласия убивает оба — он слышит «этому парню надо что-то продать», а не «этот парень решает мою задачу».</div></div>
+  </div>
+</section>
+
+<!-- ── FOLLOW UP ── -->
+<section class="sec" id="s-text">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Block 9 · the part everyone skips</div><h2 class="sec-title">💬 <em>AFTER THE CALL</em></h2></div>
+    <div class="sec-n">09 / 11</div>
+  </div>
+  <div class="stack">
+
+    <div class="sms">
+      <div class="sms-h"><span class="t">TEXT 1 · within the hour</span><button class="cpy" data-copy="Hi [Name], it's Cane — we just spoke about cleaning 👋 Here's the site example I mentioned: https://fx-socialclub.github.io/Media_Buyer — open it on your phone, the languages and color themes switch at the top. If it lands, I'll send examples from cleaning businesses.">Copy</button></div>
+      <div class="sms-body">Hi [Name], it's Cane — we just spoke about cleaning 👋 Here's the site example I mentioned: fx-socialclub.github.io/Media_Buyer — open it on your phone, the languages and color themes switch at the top. If it lands, I'll send examples from cleaning businesses.</div>
+      <div class="ru" data-ru="«[Имя], здравствуйте! Это Кейн, только что общались по уборке 👋 Вот пример сайта, о котором говорил: ссылка — откройте с телефона, сверху переключаются языки и цветовые темы. Если зацепит — скину примеры именно по клинингу.»"></div>
+    </div>
+
+    <div class="sms">
+      <div class="sms-h"><span class="t">TEXT 2 · after 2 days if silent</span><button class="cpy" data-copy="Did you get a chance to look? Just tell me straight, one word — yes or no. If it's a no, I won't bug you again 🙂">Copy</button></div>
+      <div class="sms-body">Did you get a chance to look? Just tell me straight, one word — yes or no. If it's a no, I won't bug you again 🙂</div>
+      <div class="ru" data-ru="«Посмотрели? Скажите честно одним словом — зашло или нет. Если нет — больше не побеспокою 🙂»"></div>
+    </div>
+
+    <div class="callout"><div class="co-h">📋 Post-call checklist · нажми, чтобы отметить</div>
+      <div class="check" style="margin-top:12px">
+        <div class="citem"><span class="box"></span>price per job</div>
+        <div class="citem"><span class="box"></span>jobs per day</div>
+        <div class="citem"><span class="box"></span>years in business</div>
+        <div class="citem"><span class="box"></span>decision maker</div>
+        <div class="citem"><span class="box"></span>traffic source</div>
+        <div class="citem"><span class="box"></span>has a site or not</div>
+        <div class="citem"><span class="box"></span>next contact date</div>
+      </div>
+      <div class="ru" data-ru="Записать: цена за объект · объектов в день · стаж · ЛПР · канал трафика · есть ли сайт · дата следующего контакта." style="display:block;margin-top:14px"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OBJECTIONS ── -->
+<section class="sec" id="s-obj">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Sheet 2 · objection handling</div><h2 class="sec-title">🛡 <em>OBJECTIONS</em></h2></div>
+    <div class="sec-n">10 / 11</div>
+  </div>
+  <div class="stack">
+
+    <div class="blk goal"><div class="blk-lbl">🎯 REMEMBER</div>
+      <div class="blk-en">You are not selling a website on this call. You are selling <span class="hl">30 seconds of looking at a link</span>. Every answer below ends by pointing back at that.</div>
+      <div class="ru" data-ru="Ты не продаёшь сайт в этом звонке. Ты продаёшь 30 секунд просмотра ссылки. Каждый ответ ниже возвращает именно к этому."></div></div>
+
+    <div class="blk obj"><div class="blk-lbl">❌ BASE ANSWER TO "NOT INTERESTED"</div>
+      <div class="blk-en">"All I'm doing is showing you what your competitors' sites look like — zero obligation. One minute, and if it doesn't land, you just say thanks."</div>
+      <div class="ru" data-ru="«Я просто покажу, как выглядят сайты ваших конкурентов — ни к чему не обязывает. Минута, и если не зайдёт, просто скажете «спасибо, не надо».»"></div></div>
+
+    <div class="cols">
+      <div class="blk obj"><div class="blk-lbl">❌ "How much does it cost?"</div>
+        <div class="blk-en">"Depends on scope — starts at <span class="fill">$__</span>. But look at the visual first: if it doesn't grab you, the price is irrelevant anyway. That's why I want to show you before we talk money."</div>
+        <div class="ru" data-ru="«Зависит от объёма — от $__. Но сначала посмотрите визуал: если не зацепит, цена не имеет значения. Поэтому и предлагаю сначала показать.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "Why so cheap? What's the catch?"</div>
+        <div class="blk-en">"No catch — AI does the heavy lifting, so the cost dropped by an order of magnitude. This price is for the first clients in your niche; it goes up after that. You see the result first, then you decide."</div>
+        <div class="ru" data-ru="«Подвоха нет — львиную долю работы делает ИИ, поэтому стоимость упала в разы. Эта цена для первых клиентов в вашей нише, дальше вырастет. Сначала видите результат — потом решаете.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "Yelp / Facebook is enough for me"</div>
+        <div class="blk-en">"Facebook works for people who already know you. A website catches the ones Googling 'house cleaning [city]' right now who've never heard of you."</div>
+        <div class="ru" data-ru="«Facebook работает на тех, кто вас уже знает. Сайт ловит тех, кто прямо сейчас гуглит house cleaning [город] и о вас пока не знает.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "I'm booked solid, I don't need more customers"</div>
+        <div class="blk-en">"Then it's not a customer problem — it's a pricing problem. A site is the reason to raise your rate 15–20% and make more on the exact same schedule."</div>
+        <div class="ru" data-ru="«Тогда вопрос не в клиентах, а в цене за тот же объём. Сайт — это основание поднять чек на 15–20% и при том же графике зарабатывать больше.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "No time, I'm on a job"</div>
+        <div class="blk-en">"That's exactly why I'm suggesting a text — look at it whenever you get a free minute. Is tonight fine?"</div>
+        <div class="ru" data-ru="«Поэтому и предлагаю написать — посмотрите, когда будет свободная минута. Вечером нормально?»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "I've got a guy who does websites"</div>
+        <div class="blk-en">"Fair enough, let him build it. Look at mine for comparison — then you'll know for sure what you're choosing. One minute."</div>
+        <div class="ru" data-ru="«Справедливо, пусть делает. Посмотрите моё для сравнения — тогда точно будете знать, что выбираете. Одна минута.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "Where did you get my number?"</div>
+        <div class="blk-en">"From your own listing — you publish it so customers can call. That's exactly how I called, as a customer."</div>
+        <div class="ru" data-ru="«Из вашего объявления — вы сами его публикуете, чтобы клиенты звонили. Я так и позвонил, как клиент.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "I'm not the owner"</div>
+        <div class="blk-en">"Got it. Who handles the growth side over there? What's his name, and when's a good time to reach him?"</div>
+        <div class="ru" data-ru="«Понял. А кто у вас занимается развитием? Как его зовут и когда лучше набрать?»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "Just email me something"</div>
+        <div class="blk-en">"I'll do both — but honestly, emails get buried. Let me text the link too, it opens straight in your phone browser. What's the best email?"</div>
+        <div class="ru" data-ru="«Сделаю и то и другое — но честно, письма теряются. Скину ещё и ссылку в SMS, откроется прямо в браузере телефона. Какая почта лучше?»"></div></div>
+    </div>
+
+    <div class="arrow">↓ after any objection → re-close</div>
+
+    <div class="blk win"><div class="blk-lbl">🔄 RE-CLOSE</div>
+      <div class="blk-en">"You agreed yourself that a website is image and trust. And you're a business owner, you run the numbers: a site for the price of 2–3 jobs that looks like it cost thousands.
+
+The prices I quoted are for the first clients in your area — they go up after that. So let me text you, and I want to hear what you think."</div>
+      <div class="ru" data-ru="«Вы сами согласились, что сайт — это имидж и доверие. И вы предприниматель, вы считаете цифры: сайт по цене 2–3 объектов, который выглядит на тысячи долларов. Цены, которые я озвучил, — для первых клиентов в вашем районе, дальше вырастут. Поэтому пишу вам, и хочу услышать ваше мнение.»"></div></div>
+  </div>
+</section>
+
+<div class="legend">
+  <div class="leg"><span class="leg-dot" style="background:var(--c-me)"></span>I say / Я говорю</div>
+  <div class="leg"><span class="leg-dot" style="background:var(--c-cl)"></span>Client says / Клиент</div>
+  <div class="leg"><span class="leg-dot" style="background:var(--c-obj)"></span>Objection / Возражение</div>
+  <div class="leg"><span class="leg-dot" style="background:var(--c-goal)"></span>Goal / Цель · действие</div>
+  <div class="leg"><span class="leg-dot" style="background:var(--c-win)"></span>Win / Победа</div>
+</div>
+
+</div>
+<!-- ═══════════════════ V2 ═══════════════════ -->
+<div class="view" id="v2">
+
+<div class="hero">
+  <div class="hero-tag">Version 2 · Decision tree · Owner</div>
+  <h1 class="hero-title">THE <em>OWNER</em><br>TREE</h1>
+  <p class="hero-sub">You open as yourself, not as a customer. Every reply he can give has a branch, and every branch ends at the same place: 15 minutes on Zoom to look at a free demo built before he pays anything.</p>
+  <div class="hero-meta">
+    <span class="chip acc">GOAL: book 15 min on Zoom</span>
+    <span class="chip">3 sheets</span>
+    <span class="chip">17 objections</span>
+    <span class="chip">free demo model</span>
+  </div>
+</div>
+
+<!-- ── SHEET 1 ── -->
+<section class="sec" id="t-start">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Sheet 1 of 3</div><h2 class="sec-title">👤 <em>START</em> &amp; QUALIFICATION</h2></div>
+    <div class="sec-n">01 / 03</div>
+  </div>
+  <div class="stack">
+
+    <div class="blk win"><div class="blk-lbl">📞 OWNER PICKED UP</div>
+      <div class="blk-en">10 seconds to earn the next 60. Voice up, no apologising, no "sorry to bother you".</div>
+      <div class="ru" data-ru="10 секунд, чтобы заработать следующие 60. Голос вверх, без извинений, без «извините за беспокойство»."></div></div>
+
+    <div class="blk me"><div class="blk-lbl">I SAY <b>· opening</b></div>
+      <div class="blk-en">"Hey [Name], this is Nick — did I catch you at a bad time?"</div>
+      <div class="ru" data-ru="«Эй, [Имя], это Ник — не застал вас в плохое время?»"></div></div>
+
+    <div class="arrow">↓</div>
+
+    <div class="cols">
+      <div class="branch r">
+        <div class="blabel r">← "Yeah, I'm busy"</div>
+        <div class="blk me"><div class="blk-lbl">I SAY</div>
+          <div class="blk-en">"No problem — when's a better time? I'll call back."</div>
+          <div class="ru" data-ru="«Не проблема — когда лучше? Перезвоню.»"></div></div>
+        <div class="arrow l">↓</div>
+        <div class="blk goal"><div class="blk-lbl">🎯 ACTION</div>
+          <div class="blk-en">Write down a specific day and time. Not "later this week" — a slot.</div>
+          <div class="ru" data-ru="Записать конкретный день и время. Не «где-то на неделе», а слот."></div></div>
+      </div>
+
+      <div class="branch g">
+        <div class="blabel g">→ "No, go ahead"</div>
+        <div class="blk me"><div class="blk-lbl">I SAY <b>· the hook · 10 seconds</b></div>
+          <div class="blk-en">"I'll be quick. I was looking up [Business] online today and had an idea that could bring you more customers. Wanted to run it by you real fast."</div>
+          <div class="ru" data-ru="«Буду краток. Смотрел [Бизнес] онлайн сегодня — есть идея, которая может привести больше клиентов. Хотел быстро прогнать её с вами.»"></div></div>
+        <div class="arrow l">↓</div>
+        <div class="blk me"><div class="blk-lbl">I SAY <b>· the key question</b></div>
+          <div class="blk-en">"Quick question — when people hear about you and look you up online, what do they find right now?"</div>
+          <div class="ru" data-ru="«Быстрый вопрос — когда люди слышат о вас и ищут вас в интернете, что они находят прямо сейчас?»"></div></div>
+        <div class="pause">⏸ PAUSE 3 SECONDS — listen, don't interrupt<br>Пауза 3 секунды — слушай, не перебивай</div>
+        <div class="arrow l">↓</div>
+        <div class="blk cl"><div class="blk-lbl">❓ WHAT DOES HE ANSWER?</div>
+          <div class="blk-en">Three realistic answers, three different follow-ups. Pick the branch, don't recite all three.</div>
+          <div class="ru" data-ru="Три реальных ответа — три разных продолжения. Выбирай ветку, не зачитывай все три."></div></div>
+      </div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="cols3">
+      <div class="branch r">
+        <div class="blabel r">← "Nothing / no site"</div>
+        <div class="blk me"><div class="blk-lbl">I SAY</div>
+          <div class="blk-en">"Yeah — people Google before they call anyone now. Even referrals. If there's nothing there, they move on to the next guy."</div>
+          <div class="ru" data-ru="«Ага — люди сейчас гуглят перед тем, как кому-то звонить. Даже по рекомендации. Если там пусто — идут к следующему.»"></div></div>
+      </div>
+      <div class="branch y">
+        <div class="blabel y">↓ "An old site"</div>
+        <div class="blk me"><div class="blk-lbl">I SAY</div>
+          <div class="blk-en">"Customers decide in 3 seconds based on how a site looks. If it feels outdated, they assume the business is too."</div>
+          <div class="ru" data-ru="«Клиенты решают за 3 секунды по тому, как выглядит сайт. Если он выглядит устаревшим — они считают, что и бизнес такой же.»"></div></div>
+      </div>
+      <div class="branch b">
+        <div class="blabel b">→ "We've got a decent one"</div>
+        <div class="blk me"><div class="blk-lbl">I SAY</div>
+          <div class="blk-en">"I actually saw it — that's why I called. Is it actively bringing you new customers, or just sitting there?"</div>
+          <div class="ru" data-ru="«Я его как раз видел — поэтому и позвонил. Он активно приводит новых клиентов или просто висит?»"></div></div>
+      </div>
+    </div>
+
+    <div class="arrow">↓ all paths → THE BRIDGE (sheet 2)</div>
+
+    <div class="callout"><div class="co-h">🔍 Extra qualification questions — if he opens up</div>
+      <div class="cols3" style="margin-top:12px">
+        <div class="blk goal"><div class="blk-lbl">QUESTION 1</div><div class="blk-en">"How long have you been in business?"</div>
+          <div class="ru" data-ru="«Как давно вы работаете?»"></div></div>
+        <div class="blk goal"><div class="blk-lbl">QUESTION 2</div><div class="blk-en">"Where do most of your customers come from right now?"</div>
+          <div class="ru" data-ru="«Откуда сейчас приходит большинство клиентов?»"></div></div>
+        <div class="blk goal"><div class="blk-lbl">QUESTION 3</div><div class="blk-en">"Are you looking to grow this year, or mainly maintain?"</div>
+          <div class="ru" data-ru="«Хотите расти в этом году или в основном удерживать текущее?»"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SHEET 2 ── -->
+<section class="sec" id="t-bridge">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Sheet 2 of 3</div><h2 class="sec-title">🌉 <em>BRIDGE</em>, OFFER &amp; OBJECTIONS</h2></div>
+    <div class="sec-n">02 / 03</div>
+  </div>
+  <div class="stack">
+
+    <div class="blk me"><div class="blk-lbl">🌉 THE BRIDGE <b>· said every single time</b></div>
+      <div class="blk-en">"Here's what we do — and it's a little different. We build the website first, completely done, and show it to you before you pay anything. You see it, you approve it — only if you love it do we move forward. If not — no hard feelings."</div>
+      <div class="ru" data-ru="«Вот что мы делаем — и это немного иначе. Мы сначала строим сайт, полностью готовый, и показываем его вам до любой оплаты. Вы смотрите, вы одобряете — и только если вам нравится, идём дальше. Нет — без обид.»"></div></div>
+
+    <div class="arrow">↓</div>
+
+    <div class="blk win"><div class="blk-lbl">🎯 THE CLOSE</div>
+      <div class="blk-en">"All I'm asking for is 15 minutes on Zoom so you can see it. No pitch, no pressure. Thursday or Friday work?"</div>
+      <div class="ru" data-ru="«Всё, что прошу — 15 минут в Zoom, чтобы вы это увидели. Без питча, без давления. Четверг или пятница?»"></div></div>
+
+    <div class="arrow">↓</div>
+
+    <div class="cols">
+      <div class="branch g">
+        <div class="blabel g">→ "Yeah / okay"</div>
+        <div class="blk win"><div class="blk-lbl">🏆 WIN</div>
+          <div class="blk-en">"Perfect. Morning or afternoon?"</div>
+          <div class="ru" data-ru="«Отлично. Утро или вторая половина дня?» → переходи к листу 3: бронирование"></div></div>
+      </div>
+      <div class="branch r">
+        <div class="blabel r">← objections — what does he say?</div>
+        <div class="blk obj"><div class="blk-lbl">❌ "Not interested"</div>
+          <div class="blk-en">"Fair. Is it more that you don't need customers, or you've had bad experiences with web stuff before?"
+
+then:
+
+"I'm not asking you to buy anything — just 15 minutes to see it. If it's not for you, I won't call again."</div>
+          <div class="ru" data-ru="«Справедливо. Дело в том, что клиенты не нужны, или был плохой опыт с веб-подрядчиками?» → затем: «Я не прошу ничего покупать — 15 минут просто посмотреть. Если не ваше — больше не позвоню.»"></div></div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div class="blk obj"><div class="blk-lbl">❌ "Send me an email"</div>
+        <div class="blk-en">"I'll be straight — most emails get lost. What if I send you the demo link directly? And when would be good to follow up — Thursday?"</div>
+        <div class="ru" data-ru="«Скажу прямо — такие письма теряются. Что если я отправлю вам ссылку на демо напрямую? И когда удобно созвониться — в четверг?»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "Too busy"</div>
+        <div class="blk-en">"Good sign — business is going well. We do all the work. You just show up for 15 minutes. When's a slow week?"</div>
+        <div class="ru" data-ru="«Хороший знак — значит бизнес идёт. Всю работу делаем мы. Вы просто приходите на 15 минут. Когда у вас спокойная неделя?»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "I already have a contractor"</div>
+        <div class="blk-en">"Respect that. Let us build a free demo — just to compare. If your guy is better, you'll know for sure."</div>
+        <div class="ru" data-ru="«Уважаю. Давайте мы сделаем бесплатное демо — просто для сравнения. Если ваш подрядчик лучше, вы будете знать это наверняка.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "How much does it cost?"</div>
+        <div class="blk-en">"Depends on what you need — that's why we show the demo first. Once you see it, we talk price. The demo is free."</div>
+        <div class="ru" data-ru="«Зависит от того, что нужно — поэтому сначала показываем демо. Увидите — поговорим о цене. Демо бесплатное.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "Call me later"</div>
+        <div class="blk-en">"Of course. Can I lock in a specific time? Thursday at 10, or Friday at 2?"</div>
+        <div class="ru" data-ru="«Конечно. Можем зафиксировать конкретное время? Четверг в 10 или пятница в 2?»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "We work off referrals"</div>
+        <div class="blk-en">"Great. Even referrals Google you first — 80% check before calling. If they don't like what they see, you never know you lost them."</div>
+        <div class="ru" data-ru="«Отлично. Даже по рекомендации вас сначала гуглят — 80% проверяют перед звонком. Если им не нравится то, что они видят, вы даже не узнаете, что потеряли их.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "Facebook is enough"</div>
+        <div class="blk-en">"Facebook is great for existing followers. A website catches people who don't know you yet — the ones searching Google right now for what you do."</div>
+        <div class="ru" data-ru="«Facebook отлично работает на тех, кто уже подписан. Сайт ловит тех, кто вас ещё не знает — кто прямо сейчас гуглит то, что вы делаете.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "We're too small for that"</div>
+        <div class="blk-en">"That's exactly why a good website helps — it makes you look as professional as the big guys. Levels the playing field."</div>
+        <div class="ru" data-ru="«Именно поэтому хороший сайт и помогает — вы выглядите так же профессионально, как крупные. Он уравнивает поле.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "I need to talk to my partner"</div>
+        <div class="blk-en">"Of course. Could we set up a quick call with both of you together? That way I show you both the demo at the same time — saves everyone time."</div>
+        <div class="ru" data-ru="«Конечно. Можем сделать короткий звонок с вами двумя сразу? Покажу демо обоим одновременно — сэкономит время всем.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "We tried a site — it didn't work"</div>
+        <div class="blk-en">"I hear that a lot. Usually the issue is the site looked okay but wasn't built to convert visitors into calls. That's exactly what we fix. And you see the result before paying anything."</div>
+        <div class="ru" data-ru="«Часто это слышу. Обычно проблема в том, что сайт выглядел нормально, но не был сделан, чтобы превращать посетителей в звонки. Это ровно то, что мы исправляем. И результат вы видите до оплаты.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "We have Google Maps"</div>
+        <div class="blk-en">"Google Maps is great — a website makes it even stronger. People click your Maps listing and then look for your site. If there's no site, a lot of them bounce."</div>
+        <div class="ru" data-ru="«Google Maps — это отлично, а сайт делает его ещё сильнее. Люди кликают на вашу карточку в Maps и потом ищут сайт. Если сайта нет — многие уходят.»"></div></div>
+    </div>
+
+    <div class="arrow">↓ after any objection → back to the close</div>
+
+    <div class="blk win"><div class="blk-lbl">🔄 RE-CLOSE</div>
+      <div class="blk-en">"So — 15 minutes on Zoom. Thursday or Friday?"</div>
+      <div class="ru" data-ru="«Итак — 15 минут в Zoom. Четверг или пятница?»"></div></div>
+  </div>
+</section>
+
+<!-- ── SHEET 3 ── -->
+<section class="sec" id="t-book">
+  <div class="sec-head">
+    <div><div class="sec-kicker">Sheet 3 of 3</div><h2 class="sec-title">📅 <em>BOOKING</em> &amp; HARD SITUATIONS</h2></div>
+    <div class="sec-n">03 / 03</div>
+  </div>
+  <div class="stack">
+
+    <div class="blk win"><div class="blk-lbl">✅ HE SAID YES — BOOK IT NOW</div>
+      <div class="blk-en">Don't celebrate, don't keep selling. Three steps, then get off the phone.</div>
+      <div class="ru" data-ru="Не радуйся вслух и не продолжай продавать. Три шага — и клади трубку."></div></div>
+
+    <div class="cols3">
+      <div class="branch g">
+        <div class="blabel g">Step 1</div>
+        <div class="blk me"><div class="blk-lbl">I SAY</div><div class="blk-en">"Perfect. Morning or afternoon?"</div>
+          <div class="ru" data-ru="«Отлично. Утро или вторая половина дня?»"></div></div>
+      </div>
+      <div class="branch g">
+        <div class="blabel g">Step 2</div>
+        <div class="blk me"><div class="blk-lbl">I SAY</div><div class="blk-en">"Great — [Day] at [Time]. Let me grab your email for the Zoom link."</div>
+          <div class="ru" data-ru="«Отлично — [День] в [Время]. Дайте почту для ссылки на Zoom.»"></div></div>
+      </div>
+      <div class="branch g">
+        <div class="blabel g">Step 3</div>
+        <div class="blk me"><div class="blk-lbl">I SAY</div><div class="blk-en">"Perfect. I'll have the demo ready. You're going to like it. Talk [Day]!"</div>
+          <div class="ru" data-ru="«Отлично. Демо будет готово. Вам понравится. До [День]!»"></div></div>
+      </div>
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="blk win"><div class="blk-lbl">🏆 MEETING BOOKED</div>
+      <div class="blk-en">Send the Zoom link + confirmation immediately · SMS reminder 2 hours before.</div>
+      <div class="ru" data-ru="Отправь Zoom-ссылку и подтверждение сразу · SMS-напоминание за 2 часа до встречи."></div></div>
+
+    <div class="callout"><div class="co-h">🚨 Hard situations — rare, but you need the answer ready</div></div>
+
+    <div class="cols">
+      <div class="blk obj"><div class="blk-lbl">❌ "Where did you get my number?"</div>
+        <div class="blk-en">"Totally fair question. I found your business online while researching local [industry] businesses in the area. I'm not working off any list — I just came across [Business] and had an idea."</div>
+        <div class="ru" data-ru="«Совершенно справедливый вопрос. Нашёл ваш бизнес онлайн, когда изучал местные компании в сфере [ниша]. Я не работаю по спискам — просто наткнулся на [Бизнес], и появилась идея.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "Are you local?"</div>
+        <div class="blk-en">"We work specifically with businesses in California. We know the local market well and most of our clients are in [City / area]."</div>
+        <div class="ru" data-ru="«Мы работаем именно с бизнесами в Калифорнии. Хорошо знаем местный рынок, большинство наших клиентов в [Город / район].»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "Who else do you work with?"</div>
+        <div class="blk-en">"We work with local service businesses — restaurants, contractors, salons, auto shops — across California. I'd love to show you examples on our quick call."</div>
+        <div class="ru" data-ru="«Работаем с локальными сервисными бизнесами — рестораны, подрядчики, салоны, автосервисы — по всей Калифорнии. С удовольствием покажу примеры на коротком созвоне.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "Can you guarantee results?"</div>
+        <div class="blk-en">"Here's what I can guarantee — you'll see the finished website before paying a dollar. If it doesn't look better than what you have now, you don't pay. That's our model."</div>
+        <div class="ru" data-ru="«Вот что я могу гарантировать — вы увидите готовый сайт до того, как заплатите доллар. Если он не выглядит лучше того, что у вас сейчас, вы не платите. Такая у нас модель.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "We already do SEO / promotion"</div>
+        <div class="blk-en">"That's great — SEO drives traffic, but if the site doesn't convert that traffic into calls, you're paying for visitors that never become customers. We fix the conversion side."</div>
+        <div class="ru" data-ru="«Это отлично — SEO гонит трафик, но если сайт не превращает этот трафик в звонки, вы платите за посетителей, которые не становятся клиентами. Мы чиним сторону конверсии.»"></div></div>
+
+      <div class="blk obj"><div class="blk-lbl">❌ "We don't spend on marketing"</div>
+        <div class="blk-en">"I get that. This isn't really marketing — it's your storefront online. Every customer who hears about you looks you up. Right now what they find either helps you or hurts you."</div>
+        <div class="ru" data-ru="«Понимаю. Это не совсем маркетинг — это ваша витрина в интернете. Каждый клиент, который о вас слышит, вас ищет. То, что он находит сейчас, либо помогает вам, либо вредит.»"></div></div>
+    </div>
+
+    <div class="cols">
+      <div class="branch r">
+        <div class="blk obj"><div class="blk-lbl">❌ "Call me next month"</div>
+          <div class="blk-en">"Of course. Can I ask — is there something specific happening next month that makes it a better time? I want to make sure I call at the right moment for you."</div>
+          <div class="ru" data-ru="«Конечно. Можно спросить — в следующем месяце происходит что-то конкретное, из-за чего это лучший момент? Хочу позвонить именно тогда, когда вам удобно.»"></div></div>
+        <div class="arrow l">↓</div>
+        <div class="blk goal"><div class="blk-lbl">🎯 ACTION</div>
+          <div class="blk-en">Write the date → set a reminder → call back exactly on time.</div>
+          <div class="ru" data-ru="Запиши дату → поставь напоминание → перезвони точно в срок."></div></div>
+      </div>
+      <div class="branch r">
+        <div class="blk obj"><div class="blk-lbl">❌ "We're fully booked"</div>
+          <div class="blk-en">"That's the best problem to have. Quick question — is it consistent year-round, or are there slower months? And are you getting the kind of clients you actually want, or a mixed bag?"</div>
+          <div class="ru" data-ru="«Это лучшая из проблем. Быстрый вопрос — так стабильно круглый год или есть месяцы потише? И вы получаете тех клиентов, которых реально хотите, или как повезёт?»"></div></div>
+      </div>
+    </div>
+
+    <div class="blk win"><div class="blk-lbl">🧯 AFTER 3 OBJECTIONS — STOP PUSHING</div>
+      <div class="blk-en">"Look — can I just send you the demo? No calls unless you want. Just so you have it."
+
+→ then follow up in 7 days.</div>
+      <div class="ru" data-ru="«Слушайте — можно я просто пришлю вам демо? Никаких звонков, если сами не захотите. Просто чтобы оно у вас было.» → фолоу-ап через 7 дней."></div></div>
+  </div>
+</section>
+
+<div class="legend">
+  <div class="leg"><span class="leg-dot" style="background:var(--c-me)"></span>I say / Я говорю</div>
+  <div class="leg"><span class="leg-dot" style="background:var(--c-cl)"></span>Client says / Клиент</div>
+  <div class="leg"><span class="leg-dot" style="background:var(--c-obj)"></span>Objection / Возражение</div>
+  <div class="leg"><span class="leg-dot" style="background:var(--c-goal)"></span>Goal / Цель · действие</div>
+  <div class="leg"><span class="leg-dot" style="background:var(--c-win)"></span>Win / Победа</div>
+</div>
+
+</div>
+</div><!-- /wrap -->
+
+<div class="player" id="player">
+  <span class="pw"><i></i><i></i><i></i><i></i></span>
+  <span class="ptxt" id="pTxt"></span>
+  <button class="pstop" id="pStop">Stop</button>
+</div>
+
+<footer>
+  <span>NO.SITE · COLD CALL OS · SPITCH V1 + V2</span>
+  <span id="footNote">EN base · RU under every block · print-ready</span>
+</footer>
+
+<script>
+(function(){
+  var CARET = '<svg class="cv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+
+  var SPK = '<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4zm11.5 3a4 4 0 0 0-2.2-3.6v7.2A4 4 0 0 0 15.5 12zM13.3 3.6v2.1a6.5 6.5 0 0 1 0 12.6v2.1a8.6 8.6 0 0 0 0-16.8z"/></svg>';
+  var EQ = '<span class="eq"><i></i><i></i><i></i></span>';
+
+  /* ═══ SPEECH ENGINE ═══ */
+  var synth = window.speechSynthesis;
+  var canSpeak = !!(synth && window.SpeechSynthesisUtterance);
+  var voice = null, rate = 1, curSp = null, keepAlive = null;
+  var player = document.getElementById('player'), pTxt = document.getElementById('pTxt');
+
+  function pickVoice(){
+    var vs = synth.getVoices() || [];
+    if(!vs.length) return null;
+    var pri = ['Google US English','Samantha','Microsoft Aria','Microsoft Jenny','Microsoft Guy','Alex','Karen','Daniel'];
+    for(var i=0;i<pri.length;i++){
+      for(var j=0;j<vs.length;j++){ if(vs[j].name.indexOf(pri[i])>-1) return vs[j]; }
+    }
+    for(var k=0;k<vs.length;k++){ if(vs[k].lang==='en-US') return vs[k]; }
+    for(var m=0;m<vs.length;m++){ if(vs[m].lang.indexOf('en')===0) return vs[m]; }
+    return null;
+  }
+  if(canSpeak){
+    voice = pickVoice();
+    synth.onvoiceschanged = function(){ if(!voice) voice = pickVoice(); };
+  }
+
+  function cleanText(t){
+    return t
+      .replace(/[\u201C\u201D\u00AB\u00BB"]/g,'')
+      .replace(/\[([^\]]+)\]/g,'$1')
+      .replace(/\$(\d+(?:,\d{3})*(?:\.\d+)?)\s*[\u2013\u2014-]\s*\$?(\d+(?:,\d{3})*(?:\.\d+)?)/g,'$1 to $2 dollars')
+      .replace(/\$(\d+(?:,\d{3})*(?:\.\d+)?)/g,'$1 dollars')
+      .replace(/(\d)\s*[\u2013\u2014]\s*(\d)/g,'$1 to $2')
+      .replace(/\u00B7/g,', ')
+      .replace(/[\u2013\u2014]/g,', ')
+      .replace(/\u2026/g,'...')
+      .replace(/\s+/g,' ')
+      .replace(/\s+([,.!?])/g,'$1')
+      .replace(/,\s*,/g,',')
+      .trim();
+  }
+  function chunkText(t){
+    var parts = t.match(/[^.!?]+[.!?]*/g) || [t], out = [], cur = '';
+    parts.forEach(function(p){
+      if((cur + p).length > 170){ if(cur.trim()) out.push(cur.trim()); cur = p; }
+      else cur += p;
+    });
+    if(cur.trim()) out.push(cur.trim());
+    return out;
+  }
+  function stopSpeak(){
+    if(keepAlive){ clearInterval(keepAlive); keepAlive = null; }
+    if(curSp){
+      curSp.btn.classList.remove('playing');
+      curSp.host.classList.remove('speaking');
+      curSp = null;
+    }
+    player.classList.remove('on');
+    try{ synth.cancel(); }catch(e){}
+  }
+  function speak(raw, btn, host){
+    var same = curSp && curSp.btn === btn;
+    stopSpeak();
+    if(same) return;
+    var txt = cleanText(raw);
+    if(!txt) return;
+    curSp = { btn: btn, host: host };
+    btn.classList.add('playing');
+    host.classList.add('speaking');
+    pTxt.textContent = txt.slice(0,160) + (txt.length>160?'…':'');
+    player.classList.add('on');
+    if(!voice) voice = pickVoice();
+    var chunks = chunkText(txt);
+    chunks.forEach(function(c, i){
+      var u = new SpeechSynthesisUtterance(c);
+      if(voice) u.voice = voice;
+      u.lang = 'en-US'; u.rate = rate; u.pitch = 1; u.volume = 1;
+      if(i === chunks.length - 1){ u.onend = stopSpeak; }
+      u.onerror = stopSpeak;
+      synth.speak(u);
+    });
+    setTimeout(function(){ if(curSp && !synth.speaking && !synth.pending) stopSpeak(); }, 1400);
+    keepAlive = setInterval(function(){
+      if(synth.speaking && !synth.paused){ try{ synth.resume(); }catch(e){} } else if(!synth.speaking){ stopSpeak(); }
+    }, 8000);
+  }
+  document.getElementById('pStop').addEventListener('click', stopSpeak);
+
+  /* speed */
+  var RATES = [1, 0.85, 0.7, 1.15], ri = 0;
+  var rateBtn = document.getElementById('rateBtn');
+  try{ var sr = parseFloat(localStorage.getItem('spitch-rate')); if(sr){ ri = RATES.indexOf(sr); if(ri<0) ri=0; rate = RATES[ri]; } }catch(e){}
+  function paintRate(){ rateBtn.textContent = rate.toFixed(2).replace(/0$/,'') + '×'; rateBtn.classList.toggle('on', rate !== 1); }
+  paintRate();
+  rateBtn.addEventListener('click', function(){
+    ri = (ri + 1) % RATES.length; rate = RATES[ri]; paintRate();
+    try{ localStorage.setItem('spitch-rate', rate); }catch(e){}
+    stopSpeak();
+  });
+  if(!canSpeak) rateBtn.style.display = 'none';
+
+  /* ═══ build tools row: LISTEN + RU ═══ */
+  document.querySelectorAll('.blk, .sms').forEach(function(host){
+    var src = host.querySelector('.blk-en, .sms-body');
+    var ru  = host.querySelector('.ru[data-ru]');
+    if(!src && !ru) return;
+
+    var tools = document.createElement('div');
+    tools.className = 'tools';
+
+    if(src && canSpeak){
+      var sp = document.createElement('button');
+      sp.type = 'button'; sp.className = 'sp-btn';
+      sp.innerHTML = SPK + EQ + '<span>Listen</span>';
+      sp.addEventListener('click', function(){ speak(src.textContent, sp, host); });
+      tools.appendChild(sp);
+    }
+
+    if(ru){
+      var txt = ru.getAttribute('data-ru');
+      ru.removeAttribute('data-ru');
+      ru.innerHTML = '<div class="ru-body"><div class="ru-inner"><div class="ru-txt">' + txt + '</div></div></div>';
+      var rb = document.createElement('button');
+      rb.type = 'button'; rb.className = 'ru-btn';
+      rb.innerHTML = CARET + '<span>RU перевод</span>';
+      rb.addEventListener('click', function(){
+        var open = !ru.classList.contains('open');
+        ru.classList.toggle('open', open); rb.classList.toggle('open', open);
+      });
+      ru._btn = rb;
+      tools.appendChild(rb);
+      host.insertBefore(tools, ru);
+    } else {
+      host.appendChild(tools);
+    }
+  });
+
+  /* standalone .ru blocks that sit outside .blk / .sms (callouts) */
+  document.querySelectorAll('.ru[data-ru]').forEach(function(ru){
+    var txt = ru.getAttribute('data-ru');
+    ru.removeAttribute('data-ru');
+    ru.innerHTML = '<div class="ru-body"><div class="ru-inner"><div class="ru-txt">' + txt + '</div></div></div>';
+    var rb = document.createElement('button');
+    rb.type = 'button'; rb.className = 'ru-btn'; rb.style.marginTop = '11px';
+    rb.innerHTML = CARET + '<span>RU перевод</span>';
+    rb.addEventListener('click', function(){
+      var open = !ru.classList.contains('open');
+      ru.classList.toggle('open', open); rb.classList.toggle('open', open);
+    });
+    ru._btn = rb;
+    ru.parentNode.insertBefore(rb, ru);
+  });
+
+  /* RU all toggle */
+  var ruAll = document.getElementById('ruAll'), allOpen = false;
+  ruAll.addEventListener('click', function(){
+    allOpen = !allOpen;
+    ruAll.classList.toggle('on', allOpen);
+    document.querySelectorAll('#'+curView+' .ru').forEach(function(r){
+      r.classList.toggle('open', allOpen);
+      if(r._btn) r._btn.classList.toggle('open', allOpen);
+    });
+  });
+
+  /* version switch */
+  var curView = 'v1';
+  var GOALS = {
+    v1:'🎯 GOAL — not to sell a website on the phone, but to get the number + a yes to look at the demo',
+    v2:'🎯 GOAL — not to sell a website on the phone, but to book 15 minutes for a free demo'
+  };
+  var bar = document.querySelector('.goalbar');
+  document.querySelectorAll('.vbtn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var v = b.dataset.v; if(v===curView) return;
+      curView = v;
+      document.querySelectorAll('.vbtn').forEach(function(x){ x.classList.toggle('on', x.dataset.v===v); });
+      document.querySelectorAll('.view').forEach(function(x){ x.classList.toggle('on', x.id===v); });
+      bar.textContent = GOALS[v];
+      allOpen = false; ruAll.classList.remove('on');
+      stopSpeak();
+      document.querySelectorAll('.ru').forEach(function(r){ r.classList.remove('open'); if(r._btn) r._btn.classList.remove('open'); });
+      buildRail();
+      window.scrollTo({top:0,behavior:'instant' in window ? 'auto' : 'auto'});
+    });
+  });
+
+  /* theme */
+  var tsel = document.getElementById('tsel'), tbtn = document.getElementById('tbtn');
+  tbtn.addEventListener('click', function(e){ e.stopPropagation(); tsel.classList.toggle('open'); });
+  document.addEventListener('click', function(){ tsel.classList.remove('open'); });
+  function setTheme(t){
+    document.documentElement.setAttribute('data-theme', t);
+    try{ localStorage.setItem('spitch-theme', t); }catch(e){}
+    document.querySelectorAll('.ts-opt').forEach(function(o){ o.setAttribute('aria-selected', String(o.dataset.t===t)); });
+  }
+  document.querySelectorAll('.ts-opt').forEach(function(o){
+    o.addEventListener('click', function(){ setTheme(o.dataset.t); tsel.classList.remove('open'); });
+  });
+  try{ var st = localStorage.getItem('spitch-theme'); if(st) setTheme(st); }catch(e){}
+
+  /* copy buttons */
+  document.querySelectorAll('.cpy').forEach(function(b){
+    b.addEventListener('click', function(){
+      var t = b.dataset.copy, done = function(){
+        var o = b.textContent; b.textContent = 'Copied ✓'; b.classList.add('done');
+        setTimeout(function(){ b.textContent = o; b.classList.remove('done'); }, 1600);
+      };
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done, done); }
+      else { var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select();
+             try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); done(); }
+    });
+  });
+
+  /* checklist */
+  document.querySelectorAll('.citem').forEach(function(c){
+    c.addEventListener('click', function(){ c.classList.toggle('on'); });
+  });
+
+  /* calculator */
+  var p=document.getElementById('cPrice'), u=document.getElementById('cUp'), j=document.getElementById('cJobs'),
+      out=document.getElementById('cOut'), line=document.getElementById('cLine');
+  function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+  function calc(){
+    var P=+p.value||0, U=+u.value||0, J=+j.value||0, M=U*J*22;
+    out.textContent = money(M);
+    line.innerHTML = money(P) + ' → ' + money(P+U) + ' per job · ' + J + ' jobs/day · 22 days = <b>+' + money(M) + '/mo</b> + a premium brand image';
+  }
+  [p,u,j].forEach(function(el){ el.addEventListener('input', calc); });
+  calc();
+
+  /* scroll line */
+  var sl=document.getElementById('sl');
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    sl.style.width = (h>0 ? (window.scrollY/h*100) : 0) + '%';
+    var links=document.querySelectorAll('.rail a'), best=null;
+    links.forEach(function(a){
+      var el=document.querySelector(a.getAttribute('href'));
+      if(el && el.getBoundingClientRect().top<220) best=a;
+    });
+    links.forEach(function(a){ a.classList.toggle('on', a===best); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* side rail */
+  var rail=document.getElementById('rail');
+  function buildRail(){
+    var secs=document.querySelectorAll('#'+curView+' .sec');
+    rail.innerHTML='';
+    secs.forEach(function(s){
+      var t=s.querySelector('.sec-title');
+      var name=t? t.textContent.replace(/[^\x20-\x7E]/g,'').trim() : s.id;
+      var a=document.createElement('a');
+      a.href='#'+s.id;
+      a.innerHTML='<span class="rl">'+name+'</span><span class="rd"></span>';
+      rail.appendChild(a);
+    });
+    onScroll();
+  }
+  buildRail();
+})();
+</script>
+</body>
+</html>
